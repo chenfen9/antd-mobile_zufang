@@ -1,0 +1,136 @@
+.home {
+  width: 100%;
+  background-color: #eee;
+  height: 100%;
+}
+.home .swiper_control {
+  position: relative;
+}
+.home .swiper_control .search {
+  display: flex;
+  z-index: 1;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  top: 20px;
+  height: 35px;
+}
+.home .swiper_control .search .adm-dropdown {
+  height: 35px;
+  border: 1px solid #eee;
+  border-right: 1px solid #fff;
+}
+.home .swiper_control .search .adm-dropdown .adm-dropdown-item-title {
+  font-size: 15px;
+  transform: translateY(-5px);
+}
+.home .swiper_control .search .adm-list {
+  width: 80%;
+}
+.home .swiper_control .search .adm-list .adm-list-body {
+  height: 35px;
+}
+.home .swiper_control .search .adm-list .adm-list-body .adm-list-item-content-main {
+  padding: 5px;
+  opacity: 0.5;
+}
+.home .swiper_control .search .adm-list .adm-list-body .adm-list-item-content-arrow {
+  display: none;
+}
+.home .pic {
+  height: 212px ;
+  width: 100%;
+  display: block;
+}
+.home .nav-tab {
+  margin-bottom: 5px;
+  background-color: #fff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.home .nav-tab img {
+  width: 48px;
+  height: 48px;
+}
+.home .nav-tab .nav {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home .group {
+  padding: 8px;
+  width: 100%;
+}
+.home .group .rentName {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 7px 15px ;
+}
+.home .group .more {
+  color: #868080;
+  font-size: 14px;
+}
+.home .group .rent-category {
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  height: 100px;
+  margin-top: 5px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.home .group .rent-category .wordDesc {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+.home .group .rent-category .wordDesc .desc {
+  color: #928d8d;
+  font-size: 13px;
+  font-weight: 500;
+}
+.home .group .rent-category .rent-pic {
+  width: 56px;
+  height: 55px;
+}
+.home .recentNews {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 15px 15px 50px 15px;
+}
+.home .recentNews .title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+.home .recentNews .nav_news {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.home .recentNews .nav_news .news_pic {
+  width: 150px;
+}
+.home .recentNews .nav_news .introduce {
+  width: 180px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home .recentNews .nav_news .introduce .about_from {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: #918a8a;
+}

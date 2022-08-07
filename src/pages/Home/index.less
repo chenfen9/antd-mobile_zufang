@@ -1,0 +1,146 @@
+.home{
+    width: 100%;
+    background-color: #eee;
+    height: 100%;
+    .swiper_control{
+      position: relative;
+      .search{
+        display: flex;
+        z-index: 1;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        top: 20px;
+        height: 35px;
+        .adm-dropdown{
+          height: 35px;
+          border: 1px solid #eee;
+          border-right: 1px solid #fff;
+          .adm-dropdown-item-title{
+            font-size: 15px;
+            transform: translateY(-5px);
+          }
+        }
+        .adm-list{
+          width: 80%;
+          .adm-list-body{
+            height: 35px;
+            .adm-list-item-content-main{
+              padding: 5px;
+              opacity: .5;
+            }
+            .adm-list-item-content-arrow{
+              display: none;
+            }
+          }
+        }
+      }
+     
+    }
+     
+    .pic{
+        height:212px ;
+        width: 100%;
+        display: block;
+        }
+
+  // 导肮菜单
+    .nav-tab{
+      margin-bottom: 5px;
+      background-color: #fff;
+      height: 80px;
+      display: flex;
+      align-items: center;
+       img{
+         width: 48px;
+         height: 48px;
+       }
+      .nav{
+       flex: 4;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      }
+    }
+
+    // 租房小组
+    .group{
+      padding: 8px;
+      width: 100%;
+      .rentName{
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 7px 15px ;
+      }
+      .more{
+        color: rgb(134, 128, 128);
+        font-size: 14px;
+      }
+      .rent-category{
+        border-radius: 8px;
+        background-color: #fff;
+        font-size: 14px;
+        height: 100px;
+        margin-top: 5px;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .wordDesc{
+          display: flex;
+          flex-direction: column; 
+          font-weight: 700;
+          .desc{
+            color: rgb(146, 141, 141);
+            font-size: 13px;
+            font-weight: 500;
+          }
+        }
+        .rent-pic{
+           width: 56px;
+           height: 55px;
+        }
+      }
+    }
+
+    // 资讯
+    .recentNews{
+      width: 100%;
+      margin-top: 10px;
+      background-color: #fff;
+      padding: 15px 15px 50px 15px;
+      .title{
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 15px;
+      }
+      .nav_news{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .news_pic{
+             width:150px;
+        }
+        .introduce{
+          width: 180px;
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .about_from{
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            color: rgb(145, 138, 138);
+          }
+        }
+      }
+    }
+  }
+
+  
