@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
-import { NavBar,IndexBar, List } from 'antd-mobile'
+import {IndexBar, List,Toast } from 'antd-mobile'
 import axios from 'axios'
 import './index.less'
 import { getCurrentCity } from '../../utils/position'
-import { ListItem } from 'antd-mobile/es/components/list/list-item'
+import NavAbout from '../../components/NavAbout'
 export default class CityList extends Component {
   state = {
     cityList:{},
     cityIndex:[],
-    currentCity:''
+    currentCity:'',
+    city:['北京','上海','广州','深圳']
   }
-  // 返回上一级页面
-  goBack = () => {
-    this.props.history.go(-1)
-  }
+
 
   // 获取城市列表数据
   getCityListData  = async () => {
      const result =  await axios.get('http://localhost:8080/area/city?level=1')
-     console.log(result)
+    //  console.log(result)
      let {cityIndex,cityList} = this.handlerCityData(result.data.body)
      const hotInfo = await axios.get('http://localhost:8080/area/hot')
     //  console.log(hotInfo)
@@ -44,7 +42,7 @@ export default class CityList extends Component {
          cityList[index] = [item]
        }
      })
-     console.log(cityList)
+    //  console.log(cityList)
      cityIndex = Object.keys(cityList).sort()
     // console.log(cityIndex)
      return {
@@ -53,6 +51,20 @@ export default class CityList extends Component {
      }
       
    }
+
+    //  切换城市
+    changeCity  = (cityInfo) => {
+     if(this.state.city.indexOf(cityInfo.label) > -1){
+      localStorage.setItem('currentCity',JSON.stringify(cityInfo))
+      // console.log(cityInfo)
+      this.props.history.go(-1)
+     }else{
+      Toast.show({
+        content: '该地区暂无房源'
+      })
+     }
+     
+    }
 
   componentDidMount(){
      this.getCityListData()
@@ -63,7 +75,7 @@ export default class CityList extends Component {
    if(cityIndex.length === 0 || cityList === {}){
     return false
    }
-   console.log(cityList,cityIndex)
+  //  console.log(cityList,cityIndex)
    const charCodeOfA = 'A'.charCodeAt(0)
    const groups = Array(28)
   .fill('')
@@ -71,26 +83,25 @@ export default class CityList extends Component {
     title: i === 0 ? '#': i===1 ? '热门城市': String.fromCharCode(charCodeOfA + i-2),
     items: i === 0 ? cityList['#']: i===1 ? cityList['热门城市'] : cityList[String.fromCharCode(charCodeOfA + i-2).toLowerCase()],
   }))
-  console.log(groups)
+  // console.log(groups)
     return (
       <div className="citylist">
-         <NavBar onBack={this.goBack}>城市选择</NavBar>
+        <NavAbout title='城市选择'/>
          <div style={{ height: window.innerHeight }}>
       <IndexBar>
         {groups.map(group => {
           const { title, items } = group
-          console.log(items)
           return (
             <IndexBar.Panel
               index={title}
-              title={!items ? '' : `${title}`}
+              title={`${title}`}
               key={`${title}`}
-              // className={!items ? 'hide' : ''}
+              className={!items ? 'hide' : ''}
             >
-              <List>
+              <List className={!items ? 'hide' : ''}>
                 { items ? items.map(item=>{
                    return (
-                    <List.Item key={item.value}>
+                    <List.Item key={item.value} onClick={()=>this.changeCity(item)}>
                      {item.label}
                     </List.Item>
                    )
